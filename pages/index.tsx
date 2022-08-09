@@ -10,14 +10,15 @@ const Home: NextPage = () => {
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
-  const newsList = data.map((newDto) => {
+  const newsList = data.map(({ headline, by, publishedAt }) => {
     return (
-      <li key={newDto.headline}>
-        <p>{newDto.headline}</p>
+      <li key={headline}>
         <div>
-          By: {newDto.by} Published at: {newDto.publishedAt}
+          <p>{headline}</p>
+          <div>By: {by}</div>
+          <div>Published at: {publishedAt.getUTCDate()}</div>
+          <hr />
         </div>
-        <hr />
       </li>
     );
   });
