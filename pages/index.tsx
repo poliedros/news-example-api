@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <div>
           <p>{headline}</p>
           <div>By: {by}</div>
-          <div>Published at: {publishedAt.getUTCDate()}</div>
+          <div>Published at: {new Date(publishedAt).toUTCString()}</div>
           <hr />
         </div>
       </li>
