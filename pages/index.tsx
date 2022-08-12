@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import useSWR from "swr";
 import { NewsDto } from "./api/news";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -25,6 +26,10 @@ const Home: NextPage = () => {
 
   return (
     <div className="container mx-auto flex">
+      <Head>
+        <title>Czar News</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <ul className="space-y-4">{newsList}</ul>
     </div>
   );
