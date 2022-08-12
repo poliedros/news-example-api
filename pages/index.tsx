@@ -25,12 +25,21 @@ const Home: NextPage = () => {
   });
 
   return (
-    <div className="container mx-auto flex">
+    <div className="container mx-auto">
       <Head>
         <title>Czar News</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <ul className="space-y-4">{newsList}</ul>
+      <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600">
+        Czar News
+      </h1>
+      <h2 className="font-medium leading-tight text-4xl mt-0 mb-2 text-black-600">
+        This is a news example page built by{" "}
+        <a href="https://czar.dev">Czar+</a>
+      </h2>
+      <div className="container">
+        <ul className="space-y-4">{newsList}</ul>
+      </div>
     </div>
   );
 };
